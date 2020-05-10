@@ -36,8 +36,8 @@ theme        = "hello-friend-ng"
     title = "Hello Friends"
     subtitle = "A simple theme for Hugo"
     keywords = ""
-    copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
-    readOtherPosts = "Read other posts"
+    copyright = '<a href="https://github.com/thesipham1401" target="_blank" rel="noopener">Kiên Phạm</a>'
+
 
     [languages.en.params.logo]
       logoText = "Thesi's blog"
