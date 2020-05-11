@@ -71,7 +71,7 @@ enableEmoji     = true
   [[menu.main]]
   identifier = "blog"
   name       = "Blog"
-  url        = "/blog/"
+  url        = "/posts/"
   [[menu.main]]
   identifier = "project"
   name       = "Project"
