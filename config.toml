@@ -2,6 +2,7 @@ baseurl      = "http://thesipham1401.github.io"
 title        = "My Blog"
 languageCode = "en-us"
 theme        = "hello-friend-ng"
+enableEmoji     = true
 
 [params]
   dateform        = "Jan 2, 2006"
@@ -10,7 +11,7 @@ theme        = "hello-friend-ng"
   dateformNumTime = "2006-01-02 15:04 -0700"
 
   # Subtitle for home
-  homeSubtitle = "IoT and Networking Engineer || Amateur Photographer"
+  homeSubtitle = "Networking Engineer || Amateur Photographer"
 
   # Set disableReadOtherPosts to true in order to hide the links to other posts.
   disableReadOtherPosts = false
@@ -25,7 +26,8 @@ theme        = "hello-friend-ng"
 
   # Default theme "light" or "dark"
   defaultTheme = "dark"
-
+[author]
+    name = "Kien Pham"
 [taxonomies]
     category = "blog"
     tag      = "tags"
@@ -33,10 +35,11 @@ theme        = "hello-friend-ng"
 
 [languages]
   [languages.en]
-    title = "I'm Thesi"
+    title = "Hi, I'm Thesi"
     subtitle = "Stories of My Life"
     keywords = ""
-    copyright = '<a href="https://github.com/thesipham1401" target="_blank" rel="noopener">thesipham1401</a> - <a href="https://www.facebook.com/qkiena14" target="_blank" rel="noopener">Quốc Kiên</a>'
+    copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
+    # <a href="https://github.com/thesipham1401"><img balt="facebook" src="/img/social-media.svg" height="20" width="30"></a>'
 
 
     [languages.en.params.logo]
@@ -46,14 +49,29 @@ theme        = "hello-friend-ng"
     #
     # path = "/img/your-example-logo.svg"
     # alt = "Your example logo alt text"
+    [[params.social]]
+      name = "email"
+      url  = "mailto:qkiena5@gmail.com"
+
+    [[params.social]]
+      name = "facebook"
+      url  = "https://www.facebook.com/qkiena14"
+
+    [[params.social]]
+      name = "github"
+      url  = "https://github.com/thesipham1401"
+
+    [[params.social]]
+      name = "linkedin"
+      url  = "https://www.linkedin.com/in/ph%E1%BA%A1m-qu%E1%BB%91c-ki%C3%AAn-19a4a41a6/"
+
 
   # And you can even create generic menu
+[menu]
   [[menu.main]]
   identifier = "blog"
   name       = "Blog"
   url        = "/blog/"
-
-
   [[menu.main]]
   identifier = "project"
   name       = "Project"
