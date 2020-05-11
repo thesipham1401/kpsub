@@ -10,7 +10,7 @@ theme        = "hello-friend-ng"
   dateformNumTime = "2006-01-02 15:04 -0700"
 
   # Subtitle for home
-  homeSubtitle = "IoT and Networking blog"
+  homeSubtitle = "IoT and Networking Engineer || Amateur Photographer"
 
   # Set disableReadOtherPosts to true in order to hide the links to other posts.
   disableReadOtherPosts = false
@@ -33,14 +33,14 @@ theme        = "hello-friend-ng"
 
 [languages]
   [languages.en]
-    title = "Hello Friends"
-    subtitle = "A simple theme for Hugo"
+    title = "I'm Thesi"
+    subtitle = "Stories of My Life"
     keywords = ""
-    copyright = '<a href="https://github.com/thesipham1401" target="_blank" rel="noopener">Kiên Phạm</a>'
+    copyright = '<a href="https://github.com/thesipham1401" target="_blank" rel="noopener">thesipham1401</a> - <a href="https://www.facebook.com/qkiena14" target="_blank" rel="noopener">Quốc Kiên</a>'
 
 
     [languages.en.params.logo]
-      logoText = "Thesi's blog"
+      logoText = "$ cd /thesi/home"
       logoHomeLink = "/"
     # or
     #
@@ -51,12 +51,14 @@ theme        = "hello-friend-ng"
   [[menu.main]]
   identifier = "blog"
   name       = "Blog"
-  url        = "/posts"
+  url        = "/blog/"
+
+
   [[menu.main]]
   identifier = "project"
   name       = "Project"
-  url        = "/project"
+  url        = "/project/"
   [[menu.main]]
   identifier = "story"
   name       = "Story"
-  url        = "/story"
+  url        = "/story/"

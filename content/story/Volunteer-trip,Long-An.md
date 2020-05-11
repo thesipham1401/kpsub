@@ -2,7 +2,8 @@
 title: "Volunteer Trip, Long An"
 date: 2020-05-10T21:34:27+07:00
 draft: false
-tag: ["quancom2000saigon"]
+tags:
+ - quancom2000saigon
 ---
 Xin chào các bạn, lại là mình đây. Hôm nay là một ngày cuối tuần, hẵn ai cũng có dự định đi đâu thoải mái đầu óc hay là ở nhà chill out đúng không. Hôm nay là ngày cuối cùng của kì nghỉ tết dài nhất lịch sử nên mình quyết định đi tham gia một chương trình của [Quán Cơm 2000](https://www.facebook.com/groups/ntcm.quancom2000saigon/), có tên là **Trao Yêu Thương Về Miền Tây** cùng với 2 homies và eny mình.
 
@@ -20,7 +21,7 @@ Nhà tiếp theo chính là nhà chú Nam, nhưng tiếc là chú đã đi nhà 
 
 ![Cổng nhà chú Nam](/img/la-volunteer-3.jpg)
 
-Ngôi nhà với hàng mộ phía trước bên cạnh là cây xoài, xoanh quanh là những hồ tôm hồ cá nhưng hiện không hoạt động. Gia đình cụ Quận nằm ở cuối con đường len lỏi các hồ Tôm. Lúc đến nhà cậu quận đang mang may cho một bình nước trà với một cục đá lớn mời mọi người giữa nắng thiên đỉnh. Ở đây mình gặp được một người, đó là chị của vợ cậu Quận đến mang nhu yếu phẩm cho gia đình cậu Quận, dáng người khỏe khắc, tóc bạc trông rất đẹp lão, bà có kể bà có 6 đứa con, ai cũng thành tài, báo hiếu bà ăn không hết nên hay đẹp cho các người khó khăn khác. Gia đình câu Quận có kể là trúng vé số 100 triệu, tuy nhiên đi chữa xương bánh chè cũng hết tiền luôn, mượm tiền nuôi tôm thì thất thu lỗ vốn. May mắn là giờ gia đình cô cũng ổn định trả hết nợ nhờ trúng số.
+Ngôi nhà với hàng mộ phía trước bên cạnh là cây xoài, xoanh quanh là những hồ tôm hồ cá nhưng hiện không hoạt động. Gia đình cụ Quận nằm ở cuối con đường len lỏi các hồ Tôm. Lúc đến nhà cậu Quận, thì cậu Quận đang mang ngay cho một bình nước trà với một cục đá lớn mời mọi người giữa nắng thiên đỉnh. Ở đây mình gặp được một người, đó là chị của vợ cậu Quận đến mang nhu yếu phẩm cho gia đình cậu Quận, dáng người khỏe khắc, tóc bạc trông rất đẹp lão, bà có kể bà có 6 đứa con, ai cũng thành tài, báo hiếu bà ăn không hết nên hay đẹp cho các người khó khăn khác. Gia đình câu Quận có kể là trúng vé số 100 triệu, tuy nhiên đi chữa xương bánh chè cũng hết tiền luôn, mượm tiền nuôi tôm thì thất thu lỗ vốn. May mắn là giờ gia đình cô cũng ổn định trả hết nợ nhờ trúng số.
 
 ![Bé Đẹp Trai](/img/la-volunteer-1.jpg)
 
