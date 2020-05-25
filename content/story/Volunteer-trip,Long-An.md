@@ -5,7 +5,7 @@ draft: false
 tags:
  - quancom2000saigon
 ---
-Xin chào các bạn, lại là mình đây. Hôm nay là một ngày cuối tuần, hẵn ai cũng có dự định đi đâu thoải mái đầu óc hay là ở nhà chill out đúng không. Hôm nay là ngày cuối cùng của kì nghỉ tết dài nhất lịch sử nên mình quyết định đi tham gia một chương trình của [Quán Cơm 2000](https://www.facebook.com/groups/ntcm.quancom2000saigon/), có tên là **Trao Yêu Thương Về Miền Tây** cùng với 2 homies và eny mình.
+Xin chào các bạn, lại là mình đây. Hôm nay là một ngày cuối tuần, hẳn ai cũng có dự định đi đâu thoải mái đầu óc hay là ở nhà chill out đúng không. Hôm nay cũng là ngày cuối cùng của kì nghỉ tết dài nhất lịch sử nên mình quyết định đi tham gia một chương trình của [Quán Cơm 2000](https://www.facebook.com/groups/ntcm.quancom2000saigon/), có tên là **Trao Yêu Thương Về Miền Tây** cùng với 2 homies và eny mình.
 
 Như các bạn cũng biết những ngày vừa rồi là những chuỗi ngày cực khổ và khó khăn của bà con Miền Tây, vừa Hạn mặn vừa bị dịch Covid 19. Chuyến đi từ thiện mỗi tháng được quán tổ chức một lần, đi tới Long An nên cũng khó gần và đi trong ngày.
 
@@ -13,9 +13,9 @@ Như các bạn cũng biết những ngày vừa rồi là những chuỗi ngày
 
 ![Bé Đẹp Trai](/img/la-volunteer-5.jpg)
 
-Vì phải thăm nhưng nhà có hoàng cảnh khó khăn khác, nên A Tài (Người tổ chức) phân chia thành 2 nhóm, 1 nhóm lo bếp nước ở nhà Bà Đẩu, nhóm còn lại thì đi trao quà cho các nhà khác. Nhờ mình đi theo nhóm trao quà nên nghe được rất nhiều cầu chuyện hay ho mà bây giờ minh sẽ chia sẻ cho các bạn.
+Vì phải thăm nhưng nhà có hoàn cảnh khó khăn khác, nên A Tài (Người tổ chức) phân chia thành 2 nhóm, 1 nhóm lo bếp nước ở nhà Bà Đẩu, nhóm còn lại thì đi trao quà cho các nhà khác. Nhờ mình đi theo nhóm trao quà nên nghe được rất nhiều cầu chuyện hay ho mà bây giờ minh sẽ chia sẻ cho các bạn.
 
-Tiếp tục hành trình tới gia đình của chị Kim Chi ở Cần Đước, sau 40 phút di chuyển dưới thời tiết tháng 5 nắng gắt đốt cháy virus corona. Gia đình cậu Quận nằm bên cạnh một nhà nguyện đường Hương Lộ 24. Một ngồi nhà nhỏ đơn sơ với những con gà lon ton sau vừa, và đặc biệt ở đây đó chính là ba mẹ đã chăm lo cho chị Kim Chi đã 45 năm bại não tới tận bây giờ, chỉ nghe qua thôi bạn cũng thấy niếm yêu thương của ba mẹ to lớn đến dường nào. Cô nhận quà mà mắt ướt đẫm nước mắt, không phải đây là lần đầu cô đứa quán giúp đỡ nên có nhớ hết những khuôn mắt đã đến giúp đỡ cô trước đó, cô thật thà để lạ kì, có nói nhờ có Chúa cho bác khỏe mạnh nên nhà đã ổn hơn, nhờ phước người mà cho cô con gái của cô khỏe hơn, cô cảm ơn các con nhiều lắm.
+Bây giờ tiếp tục hành trình nào, gia đình đầu tiên là chị Kim Chi ở Cần Đước, sau 40 phút di chuyển dưới thời tiết tháng 5 nắng gắt đốt cháy virus corona. Gia đình cậu Quận nằm bên cạnh một nhà nguyện đường Hương Lộ 24. Một ngồi nhà nhỏ đơn sơ với những con gà lon ton sau vừa, và đặc biệt ở đây đó chính là ba mẹ đã chăm lo cho chị Kim Chi đã 45 năm bại não tới tận bây giờ, chỉ nghe qua thôi bạn cũng thấy niếm yêu thương của ba mẹ to lớn đến dường nào. Cô nhận quà mà mắt ướt đẫm nước mắt, không phải đây là lần đầu cô đứa quán giúp đỡ nên có nhớ hết những khuôn mắt đã đến giúp đỡ cô trước đó, cô thật thà để lạ kì, có nói nhờ có Chúa cho bác khỏe mạnh nên nhà đã ổn hơn, nhờ phước người mà cho cô con gái của cô khỏe hơn, cô cảm ơn các con nhiều lắm.
 
 Nhà tiếp theo chính là nhà chú Nam, nhưng tiếc là chú đã đi nhà thờ rồi nên không gặp được chú Nam. Nhà chú chỉ đơn giản có chỗ ngủ, cái bàn nhưng không thấy đò ăn, đồ uống đâu. Đợi khoảng 15p không thấy chú về nên Đoàn đã để quà lại cho chú và tiếp tục tới các nhà khó khăn khác.
 
