@@ -3,6 +3,7 @@ title: "Contiki OS"
 date: 2020-05-26T12:44:06+07:00
 draft: false
 ---
+Lưu ý bài hướng dẫn chỉ dành cho Tiến Phúc đọc mới hiểu.
 
 Đầu tiên bạn phải cài đặt một số tool cần thiết cho ubuntu.
 
@@ -32,10 +33,9 @@ Giờ chúng ta thử nhúng 1 node thành Z1 giả lập thử nha
 ```console
 thesi@ubuntu:~$ cd contiki/examples/ipv6/rpl-border-router/
 thesi@ubuntu:~/contiki/examples/ipv6/rpl-border-router$ make TARGET=z1
-
 ```
 Tạo 1 project mới trên cooja, sau đó add mote vào bằng cánh ***Motes>Add motes>Create new mote type>Z1 mote***
-Sau đó chọn ***Brower>border-router.z1>Add motes***
+Sau đó chọn ***Browser>border-router.z1>Add motes***
 
 Như vậy là ta đã thêm một mote vào Cooja, tiếp theo chúng ta sử dụng tunslip6 để kết nối mote ra Internet và Làm SERVER.
 
