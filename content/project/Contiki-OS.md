@@ -8,7 +8,7 @@ Lưu ý bài hướng dẫn chỉ dành cho Tiến Phúc đọc mới hiểu.
 Đầu tiên bạn phải cài đặt một số tool cần thiết cho ubuntu.
 
 ```console
-thesi@ubuntu:~$ sudo apt-get install git ant openjdk-8-jdk gcc-msp430
+thesi@ubuntu:~$ sudo apt-get install git ant openjdk-8-jdk gcc-msp430 libncurses-dev
 ```
 Nếu bạn đã cài Java trước đã thì để configure lại, sử dụng lệnh sau
 ```console
@@ -142,4 +142,42 @@ thesi@ubuntu:~/contiki/examples/demo-sensor$ ./demo-sensor.native
 Kết quả sẽ hiện ra như này
 ![virtual-sensor](/img/2.jpg)
 
-To be continue...
+________________________________________
+Nhấn lệnh dài quá nên mình nên sử dụng **Alias** ,một tool của Ubuntu giúp mình viết tắt lệnh.
+
+Đầu tiên chúng ta tạo một bashsr để lưu các câu lệnh
+
+```console
+thesi@ubuntu:~$ touch ~/.bashrc
+```
+Sau đó mở file mới tạo lên, ở đây mình sử dụng text editor mặc định của ubuntu là gedit, ngoài ra bạn có thể sử dụng vim, vscode, atom,...
+
+```console
+thesi@ubuntu:~$ gedit ~/.bashrc
+```
+
+Bây giờ bạn có thể gắn bắt kì lênh bằng thích, ví dụ tạo câu lệch tắt cho tunslip6
+
+```shell
+alias tunslipcooja='sudo /home/thesi/contiki/tools/tunslip6 -a 127.0.0.1 aaaa::1/64'
+```
+***LƯU Ý*** bạn nên đổi lại ***username*** của Ubuntu của bạn, ở đây ***username*** mình là ***thesi***. Và ở đây minh sử dụng đại chỉ rõ ràng của tool ***/home/thesi/contiki/tools/tunslip6***. Nên câu lệnh này có thể bất kì ở đâu trên **Terminal** mà k cần phải **cd** đến đúng folder của nói.
+
+Như vậy là mình tạo được một lệnh **tunslipcooja** ngắn gọn.
+
+Nhưng bạn cần *lưu lại* và đăng kí với hệ điều hành mới sử dụng được nha. Để đăng kí bạn làm như sau:
+
+```console
+thesi@ubuntu:~$ source ~/.bashrc
+```
+
+Bây giờ chạy thử lệnh tắt mình.
+```console
+thesi@ubuntu:~$ tunslipcooja
+```
+Như vậy là bạn đã biết được cánh tạo một câu **lệnh tắt** bằng **alias** và cánh đăng kí của nó. Để show các câu lệnh tắt của mình đang có, bạn sử dụng lệnh sau:
+
+```console
+thesi@ubuntu:~$ alias
+```
+________________________________________
