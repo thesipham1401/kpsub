@@ -8,7 +8,7 @@ Lưu ý bài hướng dẫn chỉ dành cho Tiến Phúc đọc mới hiểu.
 Đầu tiên bạn phải cài đặt một số tool cần thiết cho ubuntu.
 
 ```console
-thesi@ubuntu:~$ sudo apt-get install git ant openjdk-8-jdk gcc-msp430 libncurses-dev
+thesi@ubuntu:~$ sudo apt-get install git ant openjdk-8-jdk gcc-msp430 libncurses-dev net-tools
 ```
 Nếu bạn đã cài Java trước đã thì để configure lại, sử dụng lệnh sau
 ```console
@@ -180,4 +180,30 @@ Như vậy là bạn đã biết được cánh tạo một câu **lệnh tắt*
 ```console
 thesi@ubuntu:~$ alias
 ```
+Sau đây là vài lênh alias mình hay sử dụng trong Contiki
+```console
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+alias cdson='cd /home/thesi/contiki/examples/cc2538dk/00_sls'
+alias cooja='cd /home/thesi/contiki/tools/cooja/;sudo ant run'
+alias dump0='sudo /home/thesi/contiki/tools/sky/serialdump-linux -b115200 /dev/ttyUSB0'
+alias dump1='sudo /home/thesi/contiki/tools/sky/serialdump-linux -b115200 /dev/ttyUSB1'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias grep='grep --color=auto'
+alias l='ls -CF'
+alias la='ls -A'
+alias ll='ls -alF'
+alias ls='ls --color=auto'
+alias mk1310='make TARGET=srf06-cc26xx BOARD=launchpad/cc1310'
+alias mk13xx='make TARGET=srf06-cc26xx BOARD=srf06/cc13xx'
+alias mk2538='make TARGET=cc2538dk'
+alias mksky='make TARGET=sky'
+alias prog0='sudo python /home/thesi/contiki/tools/cc2538-bsl/cc2538-bsl.py -e -w -v -p /dev/ttyUSB0 -a 0x00200000'
+alias prog1='sudo python /home/thesi/contiki/tools/cc2538-bsl/cc2538-bsl.py -e -w -v -p /dev/ttyUSB1 -a 0x00200000'
+alias pty='sudo putty -serial -sercfg 115200,8,n,1,N'
+alias tunslip0='sudo /home/thesi/contiki/tools/tunslip6 -B 115200 -s /dev/ttyUSB0 aaaa::1/64'
+alias tunslip1='sudo /home/thesi/contiki/tools/tunslip6 -B 115200 -s /dev/ttyUSB1 aaaa::1/64'
+alias tunslipcooja='sudo /home/thesi/contiki/tools/tunslip6 -a 127.0.0.1 aaaa::1/64'
+```
+***Các bạn nhớ thấy tên ubuntu của mình lại nha, của mình ở đây "thesi"***
 ________________________________________
