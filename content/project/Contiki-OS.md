@@ -8,31 +8,31 @@ Lưu ý bài hướng dẫn chỉ dành cho Tiến Phúc đọc mới hiểu.
 Đầu tiên bạn phải cài đặt một số tool cần thiết cho ubuntu.
 
 ```console
-thesi@ubuntu:~$ sudo apt-get install git ant openjdk-8-jdk gcc-msp430 libncurses-dev net-tools
+sudo apt-get install git ant openjdk-8-jdk gcc-msp430 libncurses-dev net-tools gcc-arm-none-eabi python3-serial
 ```
 Nếu bạn đã cài Java trước đã thì để configure lại, sử dụng lệnh sau
 ```console
-thesi@ubuntu:~$ sudo update-alternatives --config java
+sudo update-alternatives --config java
 ```
 
 Sau đó tải [Contiki-OS](https://github.com/contiki-os/contiki) về.
 ```console
-thesi@ubuntu:~$ git clone https://github.com/contiki-os/contiki.git
+git clone https://github.com/contiki-os/contiki.git
 ```
 
 Giờ chúng ta thử mở giả lập Cooja nhé, nếu lần đầu mở thì bạn phải setup MSPSim cho Cooja
 ```console
-thesi@ubuntu:~$ cd contiki/tools/cooja/
-thesi@ubuntu:~/contiki/tools/cooja$ git submodule update --init
-thesi@ubuntu:~/contiki/tools/cooja$ sudo ant run
+cd contiki/tools/cooja/
+git submodule update --init
+sudo ant run
 ```
 Giờ chúng ta thử nhúng 1 node thành Z1 giả lập thử nha
 
 Đầu tiên chúng ta phải ***make*** node ***border-router.z1*** thử nha
 
 ```console
-thesi@ubuntu:~$ cd contiki/examples/ipv6/rpl-border-router/
-thesi@ubuntu:~/contiki/examples/ipv6/rpl-border-router$ make TARGET=z1
+cd contiki/examples/ipv6/rpl-border-router/
+make TARGET=z1
 ```
 Tạo 1 project mới trên cooja, sau đó add mote vào bằng cánh ***Motes>Add motes>Create new mote type>Z1 mote***
 Sau đó chọn ***Browser>border-router.z1>Add motes***
@@ -42,13 +42,13 @@ Như vậy là ta đã thêm một mote vào Cooja, tiếp theo chúng ta sử d
 Để cái tunslip6, ta làm như sau:
 
 ```console
-thesi@ubuntu:~/contiki/examples/ipv6/rpl-border-router$ cd ../../../tools/
-thesi@ubuntu:~/contiki/tools$ make tunslip6
+cd contiki/tools
+make tunslip6
 ```
 Để configure mote làm SERVER trên Cooja ta chọn ***Tool>Serial socket (SERVER)>Z1 1...*** sau đó modify ***Listen port 60001***  rồi ***Start***, Rồi ***Start*** trên ***Simulation control*** . Sau đó bật tunslip6
 
 ```console
-thesi@ubuntu:~ sudo ./tunslip6 -a 127.0.0.1 aaaa::1/64
+sudo ./tunslip6 -a 127.0.0.1 aaaa::1/64
 ```
 ________________________________________
 Bây giờ thử viết một virtual sensor nha:
@@ -136,8 +136,8 @@ include $(CONTIKI)/Makefile.include
 Bây giờ thử make file ***.native*** chạy thử hen:
 
 ```console
-thesi@ubuntu:~/contiki/examples/demo-sensor$ make TARGET=native
-thesi@ubuntu:~/contiki/examples/demo-sensor$ ./demo-sensor.native
+make TARGET=native
+./demo-sensor.native
 ```
 Kết quả sẽ hiện ra như này
 ![virtual-sensor](/img/2.jpg)
@@ -148,12 +148,12 @@ Nhấn lệnh dài quá nên mình nên sử dụng **Alias** ,một tool của 
 Đầu tiên chúng ta tạo một bashsr để lưu các câu lệnh
 
 ```console
-thesi@ubuntu:~$ touch ~/.bashrc
+touch ~/.bashrc
 ```
 Sau đó mở file mới tạo lên, ở đây mình sử dụng text editor mặc định của ubuntu là gedit, ngoài ra bạn có thể sử dụng vim, vscode, atom,...
 
 ```console
-thesi@ubuntu:~$ gedit ~/.bashrc
+gedit ~/.bashrc
 ```
 
 Bây giờ bạn có thể gắn bắt kì lênh bằng thích, ví dụ tạo câu lệch tắt cho tunslip6
@@ -168,17 +168,17 @@ Như vậy là mình tạo được một lệnh **tunslipcooja** ngắn gọn.
 Nhưng bạn cần *lưu lại* và đăng kí với hệ điều hành mới sử dụng được nha. Để đăng kí bạn làm như sau:
 
 ```console
-thesi@ubuntu:~$ source ~/.bashrc
+source ~/.bashrc
 ```
 
 Bây giờ chạy thử lệnh tắt mình.
 ```console
-thesi@ubuntu:~$ tunslipcooja
+tunslipcooja
 ```
 Như vậy là bạn đã biết được cánh tạo một câu **lệnh tắt** bằng **alias** và cánh đăng kí của nó. Để show các câu lệnh tắt của mình đang có, bạn sử dụng lệnh sau:
 
 ```console
-thesi@ubuntu:~$ alias
+alias
 ```
 Sau đây là vài lênh alias mình hay sử dụng trong Contiki
 ```console
@@ -198,12 +198,19 @@ alias mk1310='make TARGET=srf06-cc26xx BOARD=launchpad/cc1310'
 alias mk13xx='make TARGET=srf06-cc26xx BOARD=srf06/cc13xx'
 alias mk2538='make TARGET=cc2538dk'
 alias mksky='make TARGET=sky'
-alias prog0='sudo python /home/thesi/contiki/tools/cc2538-bsl/cc2538-bsl.py -e -w -v -p /dev/ttyUSB0 -a 0x00200000'
-alias prog1='sudo python /home/thesi/contiki/tools/cc2538-bsl/cc2538-bsl.py -e -w -v -p /dev/ttyUSB1 -a 0x00200000'
+alias prog0='sudo python3 /home/thesi/contiki/tools/cc2538-bsl/cc2538-bsl.py -e -w -v -p /dev/ttyUSB0 -a 0x00200000'
+alias prog1='sudo python3 /home/thesi/contiki/tools/cc2538-bsl/cc2538-bsl.py -e -w -v -p /dev/ttyUSB1 -a 0x00200000'
 alias pty='sudo putty -serial -sercfg 115200,8,n,1,N'
 alias tunslip0='sudo /home/thesi/contiki/tools/tunslip6 -B 115200 -s /dev/ttyUSB0 aaaa::1/64'
 alias tunslip1='sudo /home/thesi/contiki/tools/tunslip6 -B 115200 -s /dev/ttyUSB1 aaaa::1/64'
 alias tunslipcooja='sudo /home/thesi/contiki/tools/tunslip6 -a 127.0.0.1 aaaa::1/64'
 ```
 ***Các bạn nhớ thấy tên ubuntu của mình lại nha, của mình ở đây "thesi"***
+________________________________________
+
+```console
+cd contiki/example/cc2538dk
+make TARGET=2538dk # or mk2538 (lệnh này đã được cài trong alias rồi nha)
+prog0 prog0 cc2538-demo.bin # Nhớ nhấn 2 nút Reset + Select cùng lúc để nạp code nha
+```
 ________________________________________
