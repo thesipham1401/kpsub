@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Kien Pham ">
+<meta name="description" content="Lưu ý bài hướng dẫn chỉ dành cho Tiến Phúc đọc mới hiểu.
+Đầu tiên bạn phải cài đặt một số tool cần thiết cho ubuntu.
+sudo apt-get install git ant openjdk-8-jdk gcc-msp430 libncurses-dev net-tools gcc-arm-none-eabi python3-serial Nếu bạn đã cài Java trước đã thì để configure lại, sử dụng lệnh sau
+sudo update-alternatives --config java Sau đó tải Contiki-OS về.
+git clone https://github.com/contiki-os/contiki.git Giờ chúng ta thử mở giả lập Cooja nhé, nếu lần đầu mở thì bạn phải setup MSPSim cho Cooja" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://thesipham1401.github.io/project/contiki-os/" />
+
+
+    <title>
+        
+            Contiki OS :: Hi, I&#39;m Thesi  — Stories of My Life
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.min.753fac8f03736f0edc9be411eb20cee875dd7bb8e73c8155fbf6a629c863f4ca.css">
+
+
+
+
+
+
+<meta itemprop="name" content="Contiki OS">
+<meta itemprop="description" content="Lưu ý bài hướng dẫn chỉ dành cho Tiến Phúc đọc mới hiểu.
+Đầu tiên bạn phải cài đặt một số tool cần thiết cho ubuntu.
+sudo apt-get install git ant openjdk-8-jdk gcc-msp430 libncurses-dev net-tools gcc-arm-none-eabi python3-serial Nếu bạn đã cài Java trước đã thì để configure lại, sử dụng lệnh sau
+sudo update-alternatives --config java Sau đó tải Contiki-OS về.
+git clone https://github.com/contiki-os/contiki.git Giờ chúng ta thử mở giả lập Cooja nhé, nếu lần đầu mở thì bạn phải setup MSPSim cho Cooja">
+<meta itemprop="datePublished" content="2020-05-26T12:44:06&#43;07:00" />
+<meta itemprop="dateModified" content="2020-05-26T12:44:06&#43;07:00" />
+<meta itemprop="wordCount" content="816">
+<meta itemprop="image" content="http://thesipham1401.github.io"/>
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://thesipham1401.github.io"/>
+
+<meta name="twitter:title" content="Contiki OS"/>
+<meta name="twitter:description" content="Lưu ý bài hướng dẫn chỉ dành cho Tiến Phúc đọc mới hiểu.
+Đầu tiên bạn phải cài đặt một số tool cần thiết cho ubuntu.
+sudo apt-get install git ant openjdk-8-jdk gcc-msp430 libncurses-dev net-tools gcc-arm-none-eabi python3-serial Nếu bạn đã cài Java trước đã thì để configure lại, sử dụng lệnh sau
+sudo update-alternatives --config java Sau đó tải Contiki-OS về.
+git clone https://github.com/contiki-os/contiki.git Giờ chúng ta thử mở giả lập Cooja nhé, nếu lần đầu mở thì bạn phải setup MSPSim cho Cooja"/>
+
+
+
+    <meta property="og:title" content="Contiki OS" />
+<meta property="og:description" content="Lưu ý bài hướng dẫn chỉ dành cho Tiến Phúc đọc mới hiểu.
+Đầu tiên bạn phải cài đặt một số tool cần thiết cho ubuntu.
+sudo apt-get install git ant openjdk-8-jdk gcc-msp430 libncurses-dev net-tools gcc-arm-none-eabi python3-serial Nếu bạn đã cài Java trước đã thì để configure lại, sử dụng lệnh sau
+sudo update-alternatives --config java Sau đó tải Contiki-OS về.
+git clone https://github.com/contiki-os/contiki.git Giờ chúng ta thử mở giả lập Cooja nhé, nếu lần đầu mở thì bạn phải setup MSPSim cho Cooja" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://thesipham1401.github.io/project/contiki-os/" />
+<meta property="og:image" content="http://thesipham1401.github.io"/>
+<meta property="article:published_time" content="2020-05-26T12:44:06+07:00" />
+<meta property="article:modified_time" content="2020-05-26T12:44:06+07:00" /><meta property="og:site_name" content="Hi, I&#39;m Thesi" />
+
+
+
+
+
+
+    <meta property="article:published_time" content="2020-05-26 12:44:06 &#43;0700 &#43;07" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">$ cd /thesi/home</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="http://thesipham1401.github.io/posts/">Blog</a></li><li><a href="http://thesipham1401.github.io/project/">Project</a></li><li><a href="http://thesipham1401.github.io/story/">Story</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="http://thesipham1401.github.io/project/contiki-os/">Contiki OS</a></h2>
+
+            
+
+            <div class="post-content">
+                <p>Lưu ý bài hướng dẫn chỉ dành cho Tiến Phúc đọc mới hiểu.</p>
+<p>Đầu tiên bạn phải cài đặt một số tool cần thiết cho ubuntu.</p>
+<pre><code class="language-console" data-lang="console">sudo apt-get install git ant openjdk-8-jdk gcc-msp430 libncurses-dev net-tools gcc-arm-none-eabi python3-serial
+</code></pre><p>Nếu bạn đã cài Java trước đã thì để configure lại, sử dụng lệnh sau</p>
+<pre><code class="language-console" data-lang="console">sudo update-alternatives --config java
+</code></pre><p>Sau đó tải <a href="https://github.com/contiki-os/contiki">Contiki-OS</a> về.</p>
+<pre><code class="language-console" data-lang="console">git clone https://github.com/contiki-os/contiki.git
+</code></pre><p>Giờ chúng ta thử mở giả lập Cooja nhé, nếu lần đầu mở thì bạn phải setup MSPSim cho Cooja</p>
+<pre><code class="language-console" data-lang="console">cd contiki/tools/cooja/
+git submodule update --init
+sudo ant run
+</code></pre><p>Giờ chúng ta thử nhúng 1 node thành Z1 giả lập thử nha</p>
+<p>Đầu tiên chúng ta phải <em><strong>make</strong></em> node <em><strong>border-router.z1</strong></em> thử nha</p>
+<pre><code class="language-console" data-lang="console">cd contiki/examples/ipv6/rpl-border-router/
+make TARGET=z1
+</code></pre><p>Tạo 1 project mới trên cooja, sau đó add mote vào bằng cánh <em><strong>Motes&gt;Add motes&gt;Create new mote type&gt;Z1 mote</strong></em>
+Sau đó chọn <em><strong>Browser&gt;border-router.z1&gt;Add motes</strong></em></p>
+<p>Như vậy là ta đã thêm một mote vào Cooja, tiếp theo chúng ta sử dụng tunslip6 để kết nối mote ra Internet và Làm SERVER.</p>
+<p>Để cái tunslip6, ta làm như sau:</p>
+<pre><code class="language-console" data-lang="console">cd contiki/tools
+make tunslip6
+</code></pre><p>Để configure mote làm SERVER trên Cooja ta chọn <em><strong>Tool&gt;Serial socket (SERVER)&gt;Z1 1&hellip;</strong></em> sau đó modify <em><strong>Listen port 60001</strong></em>  rồi <em><strong>Start</strong></em>, Rồi <em><strong>Start</strong></em> trên <em><strong>Simulation control</strong></em> . Sau đó bật tunslip6</p>
+<pre><code class="language-console" data-lang="console">sudo ./tunslip6 -a 127.0.0.1 aaaa::1/64
+</code></pre><hr>
+<p>Bây giờ thử viết một virtual sensor nha:</p>
+<p>đầu tiên ta cần tạo một folder demo-sensor chứa những file sau:</p>
+<ol>
+<li>mysensor.h</li>
+<li>mysensor.c</li>
+<li>demo-sensor.c</li>
+<li>Makefile</li>
+</ol>
+<ul>
+<li><em><strong>mysensor.h</strong></em></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#ifndef MYSENSOR_H
+</span><span style="color:#75715e">#define MYSENSOR_H
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">struct</span> Sensor {
+<span style="color:#66d9ef">char</span> name[<span style="color:#ae81ff">15</span>];
+<span style="color:#66d9ef">float</span> value;
+};
+<span style="color:#66d9ef">struct</span> Sensor <span style="color:#a6e22e">read_temperature</span>();
+<span style="color:#66d9ef">struct</span> Sensor <span style="color:#a6e22e">read_humidity</span>();
+<span style="color:#75715e">#endif
+</span></code></pre></div><ul>
+<li><em><strong>mysensor.c</strong></em></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;mysensor.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">float</span> <span style="color:#a6e22e">random_value</span>(<span style="color:#66d9ef">float</span> min, <span style="color:#66d9ef">float</span> max)
+{
+<span style="color:#66d9ef">float</span> scale <span style="color:#f92672">=</span> rand() <span style="color:#f92672">/</span> (<span style="color:#66d9ef">float</span>) RAND_MAX;
+<span style="color:#66d9ef">return</span> min <span style="color:#f92672">+</span> scale <span style="color:#f92672">*</span> (max <span style="color:#f92672">-</span> min);
+}
+<span style="color:#66d9ef">struct</span> Sensor <span style="color:#a6e22e">read_temperature</span>()
+{
+<span style="color:#66d9ef">struct</span> Sensor temp;
+strncpy(temp.name, <span style="color:#e6db74">&#34;Temperature&#34;</span>, <span style="color:#ae81ff">15</span>);
+temp.value <span style="color:#f92672">=</span> random_value(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">35</span>);
+<span style="color:#66d9ef">return</span> temp;
+}
+<span style="color:#66d9ef">struct</span> Sensor <span style="color:#a6e22e">read_humidity</span>()
+{
+<span style="color:#66d9ef">struct</span> Sensor humdidty;
+strncpy(humdidty.name, <span style="color:#e6db74">&#34;Humidity&#34;</span>, <span style="color:#ae81ff">15</span>);
+humdidty.value <span style="color:#f92672">=</span> random_value(<span style="color:#ae81ff">40</span>, <span style="color:#ae81ff">80</span>);
+<span style="color:#66d9ef">return</span> humdidty;
+}
+</code></pre></div><ul>
+<li><em><strong>demo-sensor.c</strong></em></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// demo-sensor.c
+</span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;contiki.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;sys/etimer.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;mysensor.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>PROCESS(sensor_process, <span style="color:#e6db74">&#34;Sensor process&#34;</span>);
+AUTOSTART_PROCESSES(<span style="color:#f92672">&amp;</span>sensor_process);
+<span style="color:#66d9ef">static</span> <span style="color:#66d9ef">struct</span> etimer timer;
+PROCESS_THREAD(sensor_process, ev, data)
+{
+PROCESS_BEGIN();
+printf(<span style="color:#e6db74">&#34;Demo Virtual Sensor</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+<span style="color:#66d9ef">while</span>(<span style="color:#ae81ff">1</span>) {
+etimer_set(<span style="color:#f92672">&amp;</span>timer, <span style="color:#ae81ff">3</span> <span style="color:#f92672">*</span> CLOCK_SECOND);
+PROCESS_WAIT_EVENT_UNTIL(etimer_expired(<span style="color:#f92672">&amp;</span>timer));
+<span style="color:#66d9ef">struct</span> Sensor temp <span style="color:#f92672">=</span> read_temperature();
+printf(<span style="color:#e6db74">&#34;%s: %.2f</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, temp.name, temp.value);
+<span style="color:#75715e">//printf(&#34;%f\n&#34;, temp.value);
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">struct</span> Sensor hum <span style="color:#f92672">=</span> read_humidity();
+printf(<span style="color:#e6db74">&#34;%s: %.2f</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, hum.name, hum.value);
+<span style="color:#75715e">//printf(&#34;%f\n&#34;, hum.value);
+</span><span style="color:#75715e"></span>printf(<span style="color:#e6db74">&#34;------------</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+}
+PROCESS_END();
+}
+</code></pre></div><ul>
+<li><em><strong>Makefile</strong></em></li>
+</ul>
+<pre><code class="language-console" data-lang="console">CONTIKI_PROJECT = demo-sensor
+all: $(CONTIKI_PROJECT)
+PROJECT_SOURCEFILES += mysensor.c
+CONTIKI = ../..
+include $(CONTIKI)/Makefile.include
+</code></pre><p>Bây giờ thử make file <em><strong>.native</strong></em> chạy thử hen:</p>
+<pre><code class="language-console" data-lang="console">make TARGET=native
+./demo-sensor.native
+</code></pre><p>Kết quả sẽ hiện ra như này
+<img src="/img/2.jpg" alt="virtual-sensor"></p>
+<hr>
+<p>Nhấn lệnh dài quá nên mình nên sử dụng <strong>Alias</strong> ,một tool của Ubuntu giúp mình viết tắt lệnh.</p>
+<p>Đầu tiên chúng ta tạo một bashsr để lưu các câu lệnh</p>
+<pre><code class="language-console" data-lang="console">touch ~/.bashrc
+</code></pre><p>Sau đó mở file mới tạo lên, ở đây mình sử dụng text editor mặc định của ubuntu là gedit, ngoài ra bạn có thể sử dụng vim, vscode, atom,&hellip;</p>
+<pre><code class="language-console" data-lang="console">gedit ~/.bashrc
+</code></pre><p>Bây giờ bạn có thể gắn bắt kì lênh bằng thích, ví dụ tạo câu lệch tắt cho tunslip6</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">alias tunslipcooja<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sudo /home/thesi/contiki/tools/tunslip6 -a 127.0.0.1 aaaa::1/64&#39;</span>
+</code></pre></div><p><em><strong>LƯU Ý</strong></em> bạn nên đổi lại <em><strong>username</strong></em> của Ubuntu của bạn, ở đây <em><strong>username</strong></em> mình là <em><strong>thesi</strong></em>. Và ở đây minh sử dụng đại chỉ rõ ràng của tool <em><strong>/home/thesi/contiki/tools/tunslip6</strong></em>. Nên câu lệnh này có thể bất kì ở đâu trên <strong>Terminal</strong> mà k cần phải <strong>cd</strong> đến đúng folder của nói.</p>
+<p>Như vậy là mình tạo được một lệnh <strong>tunslipcooja</strong> ngắn gọn.</p>
+<p>Nhưng bạn cần <em>lưu lại</em> và đăng kí với hệ điều hành mới sử dụng được nha. Để đăng kí bạn làm như sau:</p>
+<pre><code class="language-console" data-lang="console">source ~/.bashrc
+</code></pre><p>Bây giờ chạy thử lệnh tắt mình.</p>
+<pre><code class="language-console" data-lang="console">tunslipcooja
+</code></pre><p>Như vậy là bạn đã biết được cánh tạo một câu <strong>lệnh tắt</strong> bằng <strong>alias</strong> và cánh đăng kí của nó. Để show các câu lệnh tắt của mình đang có, bạn sử dụng lệnh sau:</p>
+<pre><code class="language-console" data-lang="console">alias
+</code></pre><p>Sau đây là vài lênh alias mình hay sử dụng trong Contiki</p>
+<pre><code class="language-console" data-lang="console">alias alert='notify-send --urgency=low -i &quot;$([ $? = 0 ] &amp;&amp; echo terminal || echo error)&quot; &quot;$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&amp;|]\s*alert$//'\'')&quot;'
+alias cdson='cd /home/thesi/contiki/examples/cc2538dk/00_sls'
+alias cooja='cd /home/thesi/contiki/tools/cooja/;sudo ant run'
+alias dump0='sudo /home/thesi/contiki/tools/sky/serialdump-linux -b115200 /dev/ttyUSB0'
+alias dump1='sudo /home/thesi/contiki/tools/sky/serialdump-linux -b115200 /dev/ttyUSB1'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias grep='grep --color=auto'
+alias l='ls -CF'
+alias la='ls -A'
+alias ll='ls -alF'
+alias ls='ls --color=auto'
+alias mk1310='make TARGET=srf06-cc26xx BOARD=launchpad/cc1310'
+alias mk13xx='make TARGET=srf06-cc26xx BOARD=srf06/cc13xx'
+alias mk2538='make TARGET=cc2538dk'
+alias mksky='make TARGET=sky'
+alias prog0='sudo python3 /home/thesi/contiki/tools/cc2538-bsl/cc2538-bsl.py -e -w -v -p /dev/ttyUSB0 -a 0x00200000'
+alias prog1='sudo python3 /home/thesi/contiki/tools/cc2538-bsl/cc2538-bsl.py -e -w -v -p /dev/ttyUSB1 -a 0x00200000'
+alias pty='sudo putty -serial -sercfg 115200,8,n,1,N'
+alias tunslip0='sudo /home/thesi/contiki/tools/tunslip6 -B 115200 -s /dev/ttyUSB0 aaaa::1/64'
+alias tunslip1='sudo /home/thesi/contiki/tools/tunslip6 -B 115200 -s /dev/ttyUSB1 aaaa::1/64'
+alias tunslipcooja='sudo /home/thesi/contiki/tools/tunslip6 -a 127.0.0.1 aaaa::1/64'
+</code></pre><p><em><strong>Các bạn nhớ thấy tên ubuntu của mình lại nha, của mình ở đây &ldquo;thesi&rdquo;</strong></em></p>
+<hr>
+<pre><code class="language-console" data-lang="console">cd contiki/example/cc2538dk
+make TARGET=2538dk # or mk2538 (lệnh này đã được cài trong alias rồi nha)
+prog0 prog0 cc2538-demo.bin # Nhớ nhấn 2 nút Reset + Select cùng lúc để nạp code nha
+</code></pre><hr>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2020</span>
+            
+                <span><a href="http://thesipham1401.github.io">Kien Pham</a></span>
+            
+            <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+            <span> <a href="http://thesipham1401.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="/bundle.min.4a69500057d68129e88f497d354afe68422eb56de6d15e45dbe2190858ea5a76bfcb096406f992984b241db45f47388ac57ab0376e3b32125bef7a8a6d0f06c4.js" integrity="sha512-SmlQAFfWgSnoj0l9NUr&#43;aEIutW3m0V5F2&#43;IZCFjqWna/ywlkBvmSmEskHbRfRziKxXqwN247MhJb73qKbQ8GxA=="></script>
+
+
+
+    </body>
+</html>

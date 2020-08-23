@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Hi, I&#39;m Thesi</title>
+    <link>http://thesipham1401.github.io/tags/</link>
+    <description>Recent content in Tags on Hi, I&#39;m Thesi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Mon, 06 Jul 2020 22:54:22 +0700</lastBuildDate>
+    
+	<atom:link href="http://thesipham1401.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>University Life</title>
+      <link>http://thesipham1401.github.io/tags/university-life/</link>
+      <pubDate>Mon, 06 Jul 2020 22:54:22 +0700</pubDate>
+      
+      <guid>http://thesipham1401.github.io/tags/university-life/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>untagged</title>
+      <link>http://thesipham1401.github.io/tags/untagged/</link>
+      <pubDate>Mon, 29 Jun 2020 20:29:21 +0700</pubDate>
+      
+      <guid>http://thesipham1401.github.io/tags/untagged/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>quancom2000saigon</title>
+      <link>http://thesipham1401.github.io/tags/quancom2000saigon/</link>
+      <pubDate>Sun, 10 May 2020 21:34:27 +0700</pubDate>
+      
+      <guid>http://thesipham1401.github.io/tags/quancom2000saigon/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

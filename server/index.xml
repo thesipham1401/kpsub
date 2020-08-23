@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hi, I&#39;m Thesi</title>
+    <link>http://thesipham1401.github.io/</link>
+    <description>Recent content on Hi, I&#39;m Thesi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Wed, 05 Aug 2020 19:06:14 +0700</lastBuildDate>
+    
+	<atom:link href="http://thesipham1401.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Checkmk</title>
+      <link>http://thesipham1401.github.io/project/checkmk/</link>
+      <pubDate>Wed, 05 Aug 2020 19:06:14 +0700</pubDate>
+      
+      <guid>http://thesipham1401.github.io/project/checkmk/</guid>
+      <description>So sánh 4 phiên bản của Checkmk Checkmk Editions</description>
+    </item>
+    
+    <item>
+      <title>MQTT for Sensor network</title>
+      <link>http://thesipham1401.github.io/project/mqtt-sn/</link>
+      <pubDate>Sun, 02 Aug 2020 13:19:20 +0700</pubDate>
+      
+      <guid>http://thesipham1401.github.io/project/mqtt-sn/</guid>
+      <description>Bây giờ chúng ta thử mô phỏng Cooja truyền tin từ 1 node lên broker. Đầu tiên bản hãy tải code mqtt-sn về. Code đây mình chỉ chỉnh sửa lại file maincore.c cho phù hợp với nhu cầu nhé. Dầu tiên bản tải code mqtt-sn. lưu ý tải về bỏ trong thư mục của contiki, bởi vì code này sử dụng thư viện của contiki để make
+git clone https://github.com/thesipham1401/mqtt-sn-contiki_example.git Bây giờ mình thử chỉnh sửa code để truyên vitural node mà ở bài trước mình đã hướng dẫn tạo cho các bạn.</description>
+    </item>
+    
+    <item>
+      <title>Show Me Your Motivation</title>
+      <link>http://thesipham1401.github.io/posts/show-me-your-motivation/</link>
+      <pubDate>Mon, 06 Jul 2020 22:54:22 +0700</pubDate>
+      
+      <guid>http://thesipham1401.github.io/posts/show-me-your-motivation/</guid>
+      <description>Yeah, Hôm nay mình nói tí về môi trường đại học. Mình đã từng là một người rất lười biếng, nhưng mình may mắn là đã thay đổi dần theo thời gian và bớt lười biếng. Đã có thời mình chả học hành gì đâu, chỉ có lên trường và về nhà ăn ngủ chơi game. Một ngày nọ, mình nhận ra cuộc sống nhàm chán của mình, và đã nhận ra mình mất khá nhiều thời gian vô bổ mà chả học được gì.</description>
+    </item>
+    
+    <item>
+      <title>I Am Fucked Up</title>
+      <link>http://thesipham1401.github.io/posts/i-am-fucked-up/</link>
+      <pubDate>Mon, 29 Jun 2020 20:29:21 +0700</pubDate>
+      
+      <guid>http://thesipham1401.github.io/posts/i-am-fucked-up/</guid>
+      <description>Yea, long time see ya. Như tiêu đề, sau khi đổi chuyển ngành xong, mọi thứ khá là mess up. I&amp;rsquo;m a senior of Control Automation Engineering, but I am passion on Telecommunication. How about Control Automation Engineering I know? Nothing. I spent a lot of time on researching protocol, computer network and DevOps. That is a point I want to share you, I got myself into a mess when I find an internship.</description>
+    </item>
+    
+    <item>
+      <title>Contiki OS</title>
+      <link>http://thesipham1401.github.io/project/contiki-os/</link>
+      <pubDate>Tue, 26 May 2020 12:44:06 +0700</pubDate>
+      
+      <guid>http://thesipham1401.github.io/project/contiki-os/</guid>
+      <description>Lưu ý bài hướng dẫn chỉ dành cho Tiến Phúc đọc mới hiểu.
+Đầu tiên bạn phải cài đặt một số tool cần thiết cho ubuntu.
+sudo apt-get install git ant openjdk-8-jdk gcc-msp430 libncurses-dev net-tools gcc-arm-none-eabi python3-serial Nếu bạn đã cài Java trước đã thì để configure lại, sử dụng lệnh sau
+sudo update-alternatives --config java Sau đó tải Contiki-OS về.
+git clone https://github.com/contiki-os/contiki.git Giờ chúng ta thử mở giả lập Cooja nhé, nếu lần đầu mở thì bạn phải setup MSPSim cho Cooja</description>
+    </item>
+    
+    <item>
+      <title>Weekly Story</title>
+      <link>http://thesipham1401.github.io/story/weekly-story/</link>
+      <pubDate>Mon, 25 May 2020 18:38:40 +0700</pubDate>
+      
+      <guid>http://thesipham1401.github.io/story/weekly-story/</guid>
+      <description>Trong lúc mình đợi tới giờ học thì mình sẽ viết bài một xíu. Hôm nay, Monday cuối tháng 5 mình mới trải qua 50 phút áp lực thi môn Quản lí chất lượng công nghiệp và 30 phút dầm mưa đi học về. Môn học thì cũng dễ, mỗi tội không nhớ vì quá nhiều lý thuyết :&amp;gt;
+Sài gòn cuối cùng cũng qua mùa nắng nóng, và chuyển qua mùa mưa.</description>
+    </item>
+    
+    <item>
+      <title>The Week After Quarantine</title>
+      <link>http://thesipham1401.github.io/story/the-week-after-quarantine/</link>
+      <pubDate>Sat, 16 May 2020 22:52:27 +0700</pubDate>
+      
+      <guid>http://thesipham1401.github.io/story/the-week-after-quarantine/</guid>
+      <description>Hello every, It&amp;rsquo;s me again. I had a long study week at my university. It was fun to meet my classmate &amp;lsquo;cause I have two months on my room. This was great to interact my teachers in a real life, because I was boring with sit in front the screen all day to watch livestream and self-study. At that time, I proposed myself to self-study Javascript, HTML, CSS and PHP. However, the result is really bad, I played game the whole time.</description>
+    </item>
+    
+    <item>
+      <title>Volunteer Trip, Long An</title>
+      <link>http://thesipham1401.github.io/story/volunteer-triplong-an/</link>
+      <pubDate>Sun, 10 May 2020 21:34:27 +0700</pubDate>
+      
+      <guid>http://thesipham1401.github.io/story/volunteer-triplong-an/</guid>
+      <description>Xin chào các bạn, lại là mình đây. Hôm nay là một ngày cuối tuần, hẳn ai cũng có dự định đi đâu thoải mái đầu óc hay là ở nhà chill out đúng không. Hôm nay cũng là ngày cuối cùng của kì nghỉ tết dài nhất lịch sử nên mình quyết định đi tham gia một chương trình của Quán Cơm 2000, có tên là Trao Yêu Thương Về Miền Tây cùng với 2 homies và eny mình.</description>
+    </item>
+    
+    <item>
+      <title>Quadrature Phase Shift Keying </title>
+      <link>http://thesipham1401.github.io/project/qpsk/</link>
+      <pubDate>Sat, 09 May 2020 22:33:53 +0700</pubDate>
+      
+      <guid>http://thesipham1401.github.io/project/qpsk/</guid>
+      <description>Xin chào các bạn, học kì vừa rồi mình có học môn Digital Signal Processing Labs của Prof.Dr Lê Tiến Thường. Môn này cũng hơi khó bởi vì có rất ít tài liệu và tự lực cánh sinh là chủ yếu, môn này làm quen với mạch TMS320C5515 eZDSP USB Stick Development Tool. Làm quen ở đây là làm như project nhỏ như đây chữ lên màn hình OLED, led blind, FFT,&amp;hellip; Và bài tập lớn có nhiều chủ đề, và nhóm mình gồm 2 người bốc trúng chủ đề khó nhất (Prof nói vậy), là xuất tín hiệu QPSK từ con C5515 ra Code Composer Studio.</description>
+    </item>
+    
+    <item>
+      <title>Preface</title>
+      <link>http://thesipham1401.github.io/story/mylife-1/</link>
+      <pubDate>Sat, 09 May 2020 22:29:40 +0700</pubDate>
+      
+      <guid>http://thesipham1401.github.io/story/mylife-1/</guid>
+      <description>Xin chào các bạn, hôm nay mình tập viết blog để lưu lại những kiến thức cũng như chia sẻ những khoảng khắc của mình. Đây là blog đâu tiên của mình và mình vẫn còn đang học thêm về static site. Chủ yếu blog của mình viết về xoay quanh mình, nên hiện tại mình đang làm quen với IoT và cố gắng ra trường sớm nhất :D</description>
+    </item>
+    
+    <item>
+      <title>Happy Birthday to my girlfriend</title>
+      <link>http://thesipham1401.github.io/posts/hpbd/</link>
+      <pubDate>Fri, 08 May 2020 21:53:57 +0000</pubDate>
+      
+      <guid>http://thesipham1401.github.io/posts/hpbd/</guid>
+      <description>Hihi. Hope you like my present, which was the thing I hear from you :D. It plus a bonus of 3000 loves. We have a great time together. When I met you, I learned numerous things, especially love, charity and mature. Wishing you dream to guide your path. We was head over heels. and now, I&amp;rsquo;d like have a couple offspring like you said xD. I love 3000 times.
+I feel quite sad &amp;lsquo;cause it isn&amp;rsquo;t perfect gift :(</description>
+    </item>
+    
+  </channel>
+</rss>

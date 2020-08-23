@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Kien Pham ">
+<meta name="description" content="Bây giờ chúng ta thử mô phỏng Cooja truyền tin từ 1 node lên broker. Đầu tiên bản hãy tải code mqtt-sn về. Code đây mình chỉ chỉnh sửa lại file maincore.c cho phù hợp với nhu cầu nhé. Dầu tiên bản tải code mqtt-sn. lưu ý tải về bỏ trong thư mục của contiki, bởi vì code này sử dụng thư viện của contiki để make
+git clone https://github.com/thesipham1401/mqtt-sn-contiki_example.git Bây giờ mình thử chỉnh sửa code để truyên vitural node mà ở bài trước mình đã hướng dẫn tạo cho các bạn." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://thesipham1401.github.io/project/mqtt-sn/" />
+
+
+    <title>
+        
+            MQTT for Sensor network :: Hi, I&#39;m Thesi  — Stories of My Life
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.min.753fac8f03736f0edc9be411eb20cee875dd7bb8e73c8155fbf6a629c863f4ca.css">
+
+
+
+
+
+
+<meta itemprop="name" content="MQTT for Sensor network">
+<meta itemprop="description" content="Bây giờ chúng ta thử mô phỏng Cooja truyền tin từ 1 node lên broker. Đầu tiên bản hãy tải code mqtt-sn về. Code đây mình chỉ chỉnh sửa lại file maincore.c cho phù hợp với nhu cầu nhé. Dầu tiên bản tải code mqtt-sn. lưu ý tải về bỏ trong thư mục của contiki, bởi vì code này sử dụng thư viện của contiki để make
+git clone https://github.com/thesipham1401/mqtt-sn-contiki_example.git Bây giờ mình thử chỉnh sửa code để truyên vitural node mà ở bài trước mình đã hướng dẫn tạo cho các bạn.">
+<meta itemprop="datePublished" content="2020-08-02T13:19:20&#43;07:00" />
+<meta itemprop="dateModified" content="2020-08-02T13:19:20&#43;07:00" />
+<meta itemprop="wordCount" content="619">
+<meta itemprop="image" content="http://thesipham1401.github.io"/>
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://thesipham1401.github.io"/>
+
+<meta name="twitter:title" content="MQTT for Sensor network"/>
+<meta name="twitter:description" content="Bây giờ chúng ta thử mô phỏng Cooja truyền tin từ 1 node lên broker. Đầu tiên bản hãy tải code mqtt-sn về. Code đây mình chỉ chỉnh sửa lại file maincore.c cho phù hợp với nhu cầu nhé. Dầu tiên bản tải code mqtt-sn. lưu ý tải về bỏ trong thư mục của contiki, bởi vì code này sử dụng thư viện của contiki để make
+git clone https://github.com/thesipham1401/mqtt-sn-contiki_example.git Bây giờ mình thử chỉnh sửa code để truyên vitural node mà ở bài trước mình đã hướng dẫn tạo cho các bạn."/>
+
+
+
+    <meta property="og:title" content="MQTT for Sensor network" />
+<meta property="og:description" content="Bây giờ chúng ta thử mô phỏng Cooja truyền tin từ 1 node lên broker. Đầu tiên bản hãy tải code mqtt-sn về. Code đây mình chỉ chỉnh sửa lại file maincore.c cho phù hợp với nhu cầu nhé. Dầu tiên bản tải code mqtt-sn. lưu ý tải về bỏ trong thư mục của contiki, bởi vì code này sử dụng thư viện của contiki để make
+git clone https://github.com/thesipham1401/mqtt-sn-contiki_example.git Bây giờ mình thử chỉnh sửa code để truyên vitural node mà ở bài trước mình đã hướng dẫn tạo cho các bạn." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://thesipham1401.github.io/project/mqtt-sn/" />
+<meta property="og:image" content="http://thesipham1401.github.io"/>
+<meta property="article:published_time" content="2020-08-02T13:19:20+07:00" />
+<meta property="article:modified_time" content="2020-08-02T13:19:20+07:00" /><meta property="og:site_name" content="Hi, I&#39;m Thesi" />
+
+
+
+
+
+
+    <meta property="article:published_time" content="2020-08-02 13:19:20 &#43;0700 &#43;07" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">$ cd /thesi/home</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="http://thesipham1401.github.io/posts/">Blog</a></li><li><a href="http://thesipham1401.github.io/project/">Project</a></li><li><a href="http://thesipham1401.github.io/story/">Story</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="http://thesipham1401.github.io/project/mqtt-sn/">MQTT for Sensor network</a></h2>
+
+            
+
+            <div class="post-content">
+                <p>Bây giờ chúng ta thử mô phỏng Cooja truyền tin từ 1 node lên broker. Đầu tiên bản hãy tải code mqtt-sn về.
+Code đây mình chỉ chỉnh sửa lại file <em><strong>maincore.c</strong></em> cho phù hợp với nhu cầu nhé.
+Dầu tiên bản tải code mqtt-sn. <em>lưu ý</em> tải về bỏ trong thư mục của contiki, bởi vì code này sử dụng thư viện của contiki để <strong>make</strong></p>
+<pre><code class="language-console" data-lang="console">git clone https://github.com/thesipham1401/mqtt-sn-contiki_example.git
+</code></pre><p>Bây giờ mình thử chỉnh sửa code để truyên vitural node mà ở bài trước mình đã hướng dẫn tạo cho các bạn.
+Đầu tiên các bạn phải copy thư viện hôm trước mình tạo vào trong folder của mqtt-sn. Các thư viên gồm: <strong>mysensor.h</strong>
+Khi bạn thêm một thư viện có 2 việc bạn phải làm. Đầu tiên bạn phải gọi nó trong file <em><strong>maincore.c</strong></em>, thứ 2 bạn phải gọi nó trong <em><strong>Makefile</strong></em></p>
+<ol>
+<li><strong>maincore.c</strong></li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;mysensor.h&#34;</span><span style="color:#75715e">
+</span></code></pre></div><ol start="2">
+<li><strong>Makefile</strong></li>
+</ol>
+<pre><code class="language-code" data-lang="code">all: main_core
+PROJECT_SOURCEFILES += mqtt_sn.c mysensor.c # Define cho contiki
+WITH_UIP6=1
+UIP_CONF_IPV6=1
+CFLAGS+= -DUIP_CONF_IPV6_RPL
+CFLAGS += -DPROJECT_CONF_H=\&quot;project-conf.h\&quot;
+CFLAGS += -ffunction-sections
+LDFLAGS += -Wl,--gc-sections,--undefined=_reset_vector__,--undefined=InterruptVectors,--undefined=_copy_data_init__,--undefined=_clear_bss_init__,--undefined=_end_of_init__
+CONTIKI=../ # Define folder Contiki ở đâu, ở đây mình tải mqtt-sn nằm ở **contiki/mqtt-sn** Nên chỉ cần 1 lần  &quot;../&quot;
+include $(CONTIKI)/Makefile.include
+</code></pre><p>Giờ mình tiếp tục sửa file <em><strong>maincore.c</strong></em> để truyền temperature và humidity cho Broker.</p>
+<p><strong>maincore.c</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;contiki.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;lib/random.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;clock.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;sys/ctimer.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;net/ip/uip.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;net/ipv6/uip-ds6.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;mqtt_sn.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;dev/leds.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;net/rime/rime.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;net/ip/uip.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;mysensor.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">static</span> uint16_t udp_port <span style="color:#f92672">=</span> <span style="color:#ae81ff">1884</span>;
+<span style="color:#66d9ef">static</span> uint16_t keep_alive <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+<span style="color:#66d9ef">static</span> uint16_t broker_address[] <span style="color:#f92672">=</span> {<span style="color:#ae81ff">0xaaaa</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0x1</span>};
+<span style="color:#66d9ef">static</span> <span style="color:#66d9ef">struct</span>   etimer time_poll;
+<span style="color:#75715e">// static uint16_t tick_process = 0;
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">char</span>     pub_test_temp[<span style="color:#ae81ff">50</span>];
+<span style="color:#66d9ef">static</span> <span style="color:#66d9ef">char</span>     pub_test_hum[<span style="color:#ae81ff">50</span>];
+<span style="color:#66d9ef">static</span> <span style="color:#66d9ef">char</span>     device_id[<span style="color:#ae81ff">17</span>];
+<span style="color:#66d9ef">static</span> <span style="color:#66d9ef">char</span>     topic_hw[<span style="color:#ae81ff">25</span>];
+<span style="color:#66d9ef">static</span> <span style="color:#66d9ef">char</span>     <span style="color:#f92672">*</span>topics_mqtt[] <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;/thesi/test/teperature&#34;</span>,
+                                  <span style="color:#e6db74">&#34;/thesi/test/humidity&#34;</span>};
+<span style="color:#75715e">// static char     *will_topic = &#34;/6lowpan_node/offline&#34;;
+</span><span style="color:#75715e">// static char     *will_message = &#34;O dispositivo esta offline&#34;
+</span><span style="color:#75715e">// This topics will run so much faster than others
+</span><span style="color:#75715e"></span>
+mqtt_sn_con_t mqtt_sn_connection;
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">mqtt_sn_callback</span>(<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>topic, <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>message){
+  printf(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Message received:&#34;</span>);
+  printf(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Topic:%s Message:%s&#34;</span>,topic,message);
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">init_broker</span>(<span style="color:#66d9ef">void</span>)
+{
+  <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>all_topics[ss(topics_mqtt)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>];
+  mqtt_sn_connection.client_id     <span style="color:#f92672">=</span> device_id;
+  mqtt_sn_connection.udp_port      <span style="color:#f92672">=</span> udp_port; <span style="color:#75715e">// 1884
+</span><span style="color:#75715e"></span>  mqtt_sn_connection.ipv6_broker   <span style="color:#f92672">=</span> broker_address;
+  mqtt_sn_connection.keep_alive    <span style="color:#f92672">=</span> keep_alive;
+  <span style="color:#75715e">//mqtt_sn_connection.will_topic    = will_topic;   // Configure as 0x00 if you don&#39;t want to use
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//mqtt_sn_connection.will_message  = will_message; // Configure as 0x00 if you don&#39;t want to use
+</span><span style="color:#75715e"></span>  mqtt_sn_connection.will_topic    <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x00</span>;
+  mqtt_sn_connection.will_message  <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x00</span>;
+
+  mqtt_sn_init();
+  size_t i;
+  <span style="color:#66d9ef">for</span>(i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>ss(topics_mqtt);i<span style="color:#f92672">++</span>)
+    all_topics[i] <span style="color:#f92672">=</span> topics_mqtt[i];
+  all_topics[i] <span style="color:#f92672">=</span> topic_hw;
+
+  mqtt_sn_create_sck(mqtt_sn_connection,
+                     all_topics,
+                     ss(all_topics),
+                     mqtt_sn_callback);
+  mqtt_sn_sub(topic_hw,<span style="color:#ae81ff">0</span>);
+}
+
+
+<span style="color:#75715e">//PROCESS(init_system_process, &#34;[Contiki-OS] Initializing OS&#34;);
+</span><span style="color:#75715e"></span>PROCESS(sensor_process, <span style="color:#e6db74">&#34;Sensor process&#34;</span>);
+<span style="color:#75715e">//AUTOSTART_PROCESSES(&amp;init_system_process,&amp;sensor_process);
+</span><span style="color:#75715e"></span>AUTOSTART_PROCESSES(<span style="color:#f92672">&amp;</span>sensor_process);
+
+<span style="color:#66d9ef">static</span> <span style="color:#66d9ef">struct</span> etimer timer;
+
+PROCESS_THREAD(sensor_process, ev, data)
+{
+PROCESS_BEGIN();
+<span style="color:#75715e">//  debug_os(&#34;Initializing the MQTT_SN_DEMO&#34;);
+</span><span style="color:#75715e"></span>
+	init_broker();
+
+  	etimer_set(<span style="color:#f92672">&amp;</span>time_poll, CLOCK_SECOND);
+
+<span style="color:#66d9ef">while</span>(<span style="color:#ae81ff">1</span>) {
+
+	etimer_set(<span style="color:#f92672">&amp;</span>timer, <span style="color:#ae81ff">3</span> <span style="color:#f92672">*</span> CLOCK_SECOND);
+	PROCESS_WAIT_EVENT_UNTIL(etimer_expired(<span style="color:#f92672">&amp;</span>timer));
+	<span style="color:#66d9ef">struct</span> Sensor temp <span style="color:#f92672">=</span> read_temperature();
+	<span style="color:#66d9ef">struct</span> Sensor hum <span style="color:#f92672">=</span> read_humidity();
+	sprintf(pub_test_temp, <span style="color:#e6db74">&#34;%s: %.2f</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, temp.name, temp.value);
+	mqtt_sn_pub(<span style="color:#e6db74">&#34;/thesi/test/teperature&#34;</span>,pub_test_temp,true,<span style="color:#ae81ff">0</span>);
+
+	sprintf(pub_test_hum, <span style="color:#e6db74">&#34;%s: %.2f</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, hum.name, hum.value);
+	mqtt_sn_pub(<span style="color:#e6db74">&#34;/thesi/test/humidity&#34;</span>,pub_test_hum,true,<span style="color:#ae81ff">0</span>);
+<span style="color:#75715e">// debug_os(&#34;State MQTT:%s&#34;,mqtt_sn_check_status_string());
+</span><span style="color:#75715e">//	if (etimer_expired(&amp;time_poll))
+</span><span style="color:#75715e">//		etimer_reset(&amp;time_poll);
+</span><span style="color:#75715e"></span>}
+PROCESS_END();
+}
+</code></pre></div><p>Bây giờ chung ta hãy setting cho broker_mqtts</p>
+<pre><code class="language-console" data-lang="console">cd /tools/mosquitto.rsmb/rsmb/src
+sudo ./broker_mqtts config.mqtt
+</code></pre><p><em><strong>config.mqtt</strong></em></p>
+<pre><code>trace_output protocol
+listener 1883 INADDR_ANY
+listerner 1884 INADDR_ANY mqtt_s
+ipv6 true
+</code></pre><p>Nếu báo lỗi socket or cannot bind port 1883, thì có thể có mosquitto broker đang chạy. Bạn chỉ cần kiểm tra và kill nó đi bằng cánh</p>
+<pre><code class="language-console" data-lang="console">ps aux | grep broker
+</code></pre><p><img src="/img/mqtts1.PNG" alt="sample1">
+Xong ta tiếp hành kill các broker đang chạy, ở đây ta thấy 2 broker ID 73767 và ID 73768</p>
+<pre><code class="language-console" data-lang="console">sudo kill -9 73767
+sudo kill -9 73768
+</code></pre><p>Thử chạy lại broker bằng lệnh trên nhé, nếu không được thì reset lại lun :D</p>
+<p><img src="/img/mqtts2.PNG" alt="sample2"></p>
+<p>Xong tiến hành mở cooja ra sử dụng tunslip cho broker (border-router), và client là &ldquo;maincore.c&rdquo; nhé</p>
+<p>Sử dụng <strong>mosquitto_sub -t &ldquo;#&rdquo; -v</strong> để xem các tin public của tất cả (&quot;#&quot;), nếu bạn mún coi cụ thể topic nào đó chỉ cần thay đổi &ldquo;#&rdquo; thành topic cụ thể (vd &ldquo;thesi/test/temperature&rdquo;)</p>
+<p>Và đây chỉ là mô phỏng nhé :v, chỉ cần thay đổi code phù hợp với mục đích của bạn là đc. Peace</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2020</span>
+            
+                <span><a href="http://thesipham1401.github.io">Kien Pham</a></span>
+            
+            <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+            <span> <a href="http://thesipham1401.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="/bundle.min.4a69500057d68129e88f497d354afe68422eb56de6d15e45dbe2190858ea5a76bfcb096406f992984b241db45f47388ac57ab0376e3b32125bef7a8a6d0f06c4.js" integrity="sha512-SmlQAFfWgSnoj0l9NUr&#43;aEIutW3m0V5F2&#43;IZCFjqWna/ywlkBvmSmEskHbRfRziKxXqwN247MhJb73qKbQ8GxA=="></script>
+
+
+
+    </body>
+</html>

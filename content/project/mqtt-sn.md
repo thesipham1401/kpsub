@@ -145,7 +145,7 @@ sudo ./broker_mqtts config.mqtt
 ```
 trace_output protocol
 listener 1883 INADDR_ANY
-listerner 1884 INADDR_ANY mqtt_s
+listener 1884 INADDR_ANY mqtt_s
 ipv6 true
 ```
 
